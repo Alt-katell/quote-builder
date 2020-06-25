@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 
+import './QuoteGenerator.css';
+
 class QuoteGenerator extends Component {
   render() {
+    let squareStyle = {
+      background: '#69CCAE'
+    }
+
     return(
-      <div>
+      <div className="quote-generator">
         <div className="quote-card-build">
-          <div className="background-rectangle"></div>
-          <p className="selected-quote">My quote here</p>
-          <p className="selected-quote-author">Author</p>
+          <div className="background-rectangle" style={squareStyle}></div>
+            <div className="quote-and-author">
+              <p className="selected-quote">My quote here My quote here My quote here My quote here</p>
+              <p className="selected-quote-author">Author</p>
+            </div>
         </div>
 
         <button className="download-button">Download this quote</button>
@@ -27,9 +35,9 @@ class QuoteGenerator extends Component {
           <div className="choose-font">
             <p>Font</p>
               <div className="font-options">
-                <p className="font cookie"></p>
-                <p className="font playfair-display"></p>
-                <p className="font raleway"></p>
+                <p className="font cookie">Cookie</p>
+                <p className="font playfair-display">Playfair Display</p>
+                <p className="font raleway">Raleway</p>
               </div>
           </div>
         </div>
