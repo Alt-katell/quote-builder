@@ -25,6 +25,13 @@ main {
   padding: 6px 16px;
 }
 
+.quote-list {
+  list-style: none;
+  padding: 0;
+  height: 400px;
+  overflow-y: scroll;
+}
+
 footer {
   text-align: center;
 }

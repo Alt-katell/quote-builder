@@ -4,12 +4,12 @@ import './App.css';
 
 import Logo from './components/Logo/Logo';
 import QuoteGenerator from './components/QuoteGenerator/QuoteGenerator';
-import QuoteList from './components/QuoteList/QuoteList';
+import QuoteCard from './components/QuoteCard/QuoteCard';
 
 class App extends Component {
   state = {
     quotes: [],
-    selectedQuote: null
+    selectedQuote: ""
   };
 
   componentDidMount() {
@@ -23,7 +23,20 @@ class App extends Component {
       })
   }
 
+  selectQuoteHandler = (quote) => {
+    this.setState({selectedQuote: quote})
+  }
+
   render() {
+    const quoteList = this.state.quotes.map(quote =>
+      <li key={quote._id}>
+        <QuoteCard
+          quote={quote}
+          selectQuote={() => this.selectQuoteHandler(quote)}
+          />
+      </li>
+    );
+
     return (
       <div className="App">
         <header className="App-header">
@@ -31,11 +44,13 @@ class App extends Component {
         </header>
         <main>
           <div className="left">
-            <QuoteGenerator selectedQuote={this.state.selectedQuote}/>
+            <QuoteGenerator selected={this.state.selectedQuote}/>
           </div>
           <div className="right">
             <input className="search" type="text" placeholder="Search a quote"/>
-            <QuoteList quotes={this.state.quotes}/>
+            <ul className="quote-list">
+              {quoteList}
+            </ul>
           </div>
         </main>
         <footer>
