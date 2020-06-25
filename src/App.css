@@ -20,9 +20,9 @@ main {
 }
 
 .search {
-  width: 100%;
+  width: 350px;
   border: 1px solid #C4C4C4;
-  padding: 6px 4px;
+  padding: 6px 16px;
 }
 
 footer {
