@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './QuoteCard.css';
+
 const QuoteCard = (props) => {
   return (
-    <div>
-      <p>{props.quote}</p>
-      <p>{props.author}</p>
+    <div className="quote-card">
+      <p className="quote">{props.quote}</p>
+      <p className="author">{props.author}</p>
     </div>
   );
 }

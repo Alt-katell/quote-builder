@@ -34,10 +34,13 @@ class App extends Component {
             <QuoteGenerator selectedQuote={this.state.selectedQuote}/>
           </div>
           <div className="right">
-            <input type="text" placeholder="Search a quote"/>
+            <input className="search" type="text" placeholder="Search a quote"/>
             <QuoteList quotes={this.state.quotes}/>
           </div>
         </main>
+        <footer>
+          <p>© Katell GOAËR 2020</p>
+        </footer>
       </div>
     );
   }

@@ -2,13 +2,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Playfair+Display&family=Raleway&display=swap');
 
+html,
 body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  margin: 0;
 }
 
 main {
-  margin: 70px 150px;
+  margin: 70px 100px;
   display: flex;
   justify-content: space-between;
+}
+
+.left {
+  margin-right: 50px;
+}
+
+.search {
+  width: 100%;
+  border: 1px solid #C4C4C4;
+  padding: 6px 4px;
+}
+
+footer {
+  text-align: center;
 }
