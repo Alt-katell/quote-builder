@@ -14,12 +14,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch('https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10')
+    fetch('https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=15')
       .then(response => response.json())
       .then(data => {
         this.setState({
           quotes: data.quotes,
-          selectedQuote: data.quotes[0]
+          selectedQuote: data.quotes[2]
         })
       })
   }
@@ -36,25 +36,30 @@ class App extends Component {
       ...this.state,
       search: event.target.value
     })
-    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/${event.target.value}?page=1&limit=10`)
+    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/${event.target.value}?page=1&limit=15`)
       .then(response => response.json())
       .then(data => {
         this.setState({
           ...this.state,
           quotes: data.quotes
         })
+        console.log(this.state.quotes)
       })
+
   }
 
   render() {
-    const quoteList = this.state.quotes.map(quote =>
-      <li key={quote._id}>
-        <QuoteCard
-          quote={quote}
-          selectQuote={() => this.selectQuoteHandler(quote)}
-          />
-      </li>
-    );
+    let quoteList = <p>No result for "{this.state.search}"</p>
+    if (this.state.quotes.length > 0) {
+      quoteList = this.state.quotes.map(quote =>
+        <li key={quote._id}>
+          <QuoteCard
+            quote={quote}
+            selectQuote={() => this.selectQuoteHandler(quote)}
+            />
+        </li>
+      );
+    }
 
     return (
       <div className="App">
@@ -63,7 +68,7 @@ class App extends Component {
         </header>
         <main>
           <div className="left">
-            <QuoteGenerator selected={this.state.selectedQuote}/>
+            <QuoteGenerator selectedQuote={this.state.selectedQuote}/>
           </div>
           <div className="right">
             <input

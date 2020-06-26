@@ -13,8 +13,8 @@ class QuoteGenerator extends Component {
         <div className="quote-card-build">
           <div className="background-rectangle" style={squareStyle}></div>
             <div className="quote-and-author">
-              <p className="selected-quote">{this.props.selected.quoteText}</p>
-              <p className="selected-quote-author">{this.props.selected.quoteAuthor}</p>
+              <p className="selected-quote">{this.props.selectedQuote.quoteText}</p>
+              <p className="selected-quote-author">{this.props.selectedQuote.quoteAuthor}</p>
             </div>
         </div>
 
