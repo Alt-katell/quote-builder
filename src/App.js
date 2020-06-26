@@ -10,7 +10,9 @@ class App extends Component {
   state = {
     quotes: [],
     selectedQuote: "",
-    search: ""
+    search: "",
+    selectedColor: "#69CCAE",
+    selectedFont: "Raleway"
   };
 
   componentDidMount() {
@@ -45,7 +47,36 @@ class App extends Component {
         })
         console.log(this.state.quotes)
       })
+  }
 
+  selectColorHandler = (event) => {
+    let color = "";
+    switch (event.target.classList.value) {
+      case "color-dot green": color = "#69CCAE"; break;
+      case "color-dot pink": color = "#EB8BB4"; break;
+      case "color-dot yellow": color = "#F3C958"; break;
+      case "color-dot coral": color = "#F68874"; break;
+      default: color = "#BAD4D4";
+    }
+
+    this.setState({
+      ...this.state,
+      selectedColor: color
+    })
+  }
+
+  selectFontHandler = (event) => {
+    let font = "";
+    switch (event.target.classList.value) {
+      case "font cookie": font = "'Cookie', cursive"; break;
+      case "font playfair-display": font = "'Playfair Display', serif"; break;
+      default: font = "'Raleway', sans-serif";
+    }
+
+    this.setState({
+      ...this.state,
+      selectedFont: font
+    })
   }
 
   render() {
@@ -69,7 +100,12 @@ class App extends Component {
         </header>
         <main>
           <div className="left">
-            <QuoteGenerator selectedQuote={this.state.selectedQuote}/>
+            <QuoteGenerator
+              selectedQuote={this.state.selectedQuote}
+              selectColor={this.selectColorHandler}
+              selectedColor={this.state.selectedColor}
+              selectFont={this.selectFontHandler}
+              selectedFont={this.state.selectedFont}/>
           </div>
           <div className="right">
             <input
