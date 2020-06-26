@@ -56,6 +56,7 @@ class App extends Component {
           <QuoteCard
             quote={quote}
             selectQuote={() => this.selectQuoteHandler(quote)}
+            selectedQuote={this.state.selectedQuote}
             />
         </li>
       );
