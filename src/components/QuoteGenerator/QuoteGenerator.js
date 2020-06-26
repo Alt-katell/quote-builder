@@ -11,7 +11,7 @@ class QuoteGenerator extends Component {
     let fontSize = "";
 
     switch (this.props.selectedFont) {
-      case "'Cookie', cursive": fontSize = "26px"; break;
+      case "'Cookie', cursive": fontSize = "28px"; break;
       default: fontSize = "20px";
     }
 

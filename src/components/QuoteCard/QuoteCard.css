@@ -16,3 +16,12 @@
   text-align: right;
   font-style: italic;
 }
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 500px) {
+  .quote-card {
+    width: 80%;
+  }
+}

@@ -45,7 +45,6 @@ class App extends Component {
           ...this.state,
           quotes: data.quotes
         })
-        console.log(this.state.quotes)
       })
   }
 

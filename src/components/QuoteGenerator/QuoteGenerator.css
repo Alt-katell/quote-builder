@@ -104,3 +104,20 @@
   font-family: 'Raleway', sans-serif;
 }
 
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 500px) {
+  .quote-generator{
+    width: 100%;
+  }
+
+  .quote-card-build {
+    width: 100%;
+  }
+
+  .download-button {
+    align-self: flex-start;
+  }
+}

@@ -35,3 +35,17 @@ main {
 footer {
   text-align: center;
 }
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+    margin: 70px 40px;
+  }
+
+  .search {
+    width: 82%;
+  }
+}
