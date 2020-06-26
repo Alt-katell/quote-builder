@@ -45,6 +45,7 @@
 
 .download-button:hover {
   background: #686868;
+  cursor: pointer;
 }
 
 
