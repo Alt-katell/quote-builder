@@ -5,28 +5,16 @@
 
 /*QUOTE CARD BUILD*/
 
-.background-rectangle {
-  width: 500px;
-  height: 200px;
-}
-
 .quote-card-build {
-  position: relative;
-}
-
-.selected-quote{
-  position: absolute;
-  width: 80%;
-  top: 20%;
-  left: 10%;
+  background: red;
+  padding: 10% 10%;
+  width: 450px;
 }
 
 .selected-quote-author {
   text-align: right;
   font-style: italic;
-  position: absolute;
-  bottom: 20%;
-  right: 10%;
+  margin-top: 24px;
 }
 
 

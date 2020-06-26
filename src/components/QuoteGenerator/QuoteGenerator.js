@@ -11,11 +11,11 @@ class QuoteGenerator extends Component {
     return(
       <div className="quote-generator">
         <div className="quote-card-build">
-          <div className="background-rectangle" style={squareStyle}></div>
-            <div className="quote-and-author">
+          {/*<div className="background-rectangle" style={squareStyle}></div>*/}
+            {/*<div className="quote-and-author">*/}
               <p className="selected-quote">{this.props.selectedQuote.quoteText}</p>
               <p className="selected-quote-author">{this.props.selectedQuote.quoteAuthor}</p>
-            </div>
+            {/*</div>*/}
         </div>
 
         <button className="download-button">Download this quote</button>
