@@ -20,7 +20,7 @@
 
 /*RESPONSIVE*/
 
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .quote-card {
     width: 80%;
   }

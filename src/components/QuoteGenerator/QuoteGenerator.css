@@ -108,13 +108,13 @@
 
 /*RESPONSIVE*/
 
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .quote-generator{
     width: 100%;
   }
 
   .quote-card-build {
-    width: 100%;
+    width: 80%;
   }
 
   .download-button {
