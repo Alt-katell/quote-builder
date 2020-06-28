@@ -119,7 +119,7 @@ class App extends Component {
           </div>
         </main>
         <footer>
-          <p>© Katell GOAËR 2020</p>
+          <a href="https://github.com/Alt-katell/quote-builder" target="_blank">© Katell GOAËR 2020</a>
         </footer>
       </div>
     );
