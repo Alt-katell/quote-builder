@@ -1,6 +1,7 @@
 import React from 'react';
 
-// import htmlToImage from 'html-to-image';
+import htmlToImage from 'html-to-image';
+import { saveAs } from 'file-saver';
 
 import './QuoteGenerator.css';
 
@@ -23,12 +24,16 @@ const QuoteGenerator = (props) => {
 
     return(
       <div className="quote-generator">
-        <div id="quote-card" className="quote-card-build" style={backgroundColor}>
-              <p className="selected-quote" style={fontStyle}>{props.selectedQuote.quoteText}</p>
-              <p className="selected-quote-author">{props.selectedQuote.quoteAuthor}</p>
-        </div>
+          <div id="my-quote" className="quote-card-build" style={backgroundColor}>
+            <p className="selected-quote" style={fontStyle}>{props.selectedQuote.quoteText}</p>
+            <p className="selected-quote-author">{props.selectedQuote.quoteAuthor}</p>
+          </div>
 
-        <button className="download-button">Download this quote</button>
+        <button className="download-button" onClick={()=>
+          htmlToImage.toBlob(document.getElementById('my-quote'))
+            .then(function (blob) {
+            saveAs(blob, 'my-quote.png');
+        })}>Download this quote</button>
 
         <div className="choose-styling">
           <div className="choose-color">
