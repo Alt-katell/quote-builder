@@ -16,12 +16,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch('https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=15')
+    fetch('https://quote-garden.herokuapp.com/api/v3/quotes?page=1&limit=15')
       .then(response => response.json())
-      .then(data => {
+      .then(elements => {
         this.setState({
-          quotes: data.quotes,
-          selectedQuote: data.quotes[2]
+          quotes: elements.data,
+          selectedQuote: elements.data[0]
         })
       })
   }
@@ -33,17 +33,16 @@ class App extends Component {
   }
 
   searchHandler = (event) => {
-    console.log(event.target.value)
     this.setState({
       ...this.state,
       search: event.target.value
     })
-    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/${event.target.value}?page=1&limit=15`)
+    fetch(`https://quote-garden.herokuapp.com/api/v3/quotes?query=${event.target.value}&page=1&limit=15`)
       .then(response => response.json())
-      .then(data => {
+      .then(elements => {
         this.setState({
           ...this.state,
-          quotes: data.quotes
+          quotes: elements.data
         })
       })
   }
@@ -119,7 +118,7 @@ class App extends Component {
           </div>
         </main>
         <footer>
-          <a href="https://github.com/Alt-katell/quote-builder" target="_blank">© Katell GOAËR 2020</a>
+          <a href="https://www.katellgoaer.com" target="_blank" rel="noopener noreferrer">© Katell GOAËR 2020</a>
         </footer>
       </div>
     );
